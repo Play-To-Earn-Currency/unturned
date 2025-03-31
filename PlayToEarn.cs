@@ -101,10 +101,11 @@ namespace PlayToEarn
 
         private void OnPlayerConnected(UnturnedPlayer player)
         {
-            if (Configuration.Instance.ItemCollectReward == "0")
+            if (Configuration.Instance.ItemCollectReward != "0")
                 player.Events.OnInventoryAdded += ItemReceived;
+
             Database.AddNewPlayer(player.Id);
-            
+
             if (tickrate != null)
             {
                 if (tickrate.Contains(player))
