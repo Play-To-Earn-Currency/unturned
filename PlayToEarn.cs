@@ -209,10 +209,10 @@ class Utils
     {
         string quantityString = quantity.ToString();
 
-        if (quantityString.Length <= 17)
+        if (quantityString.Length <= 16)
             return "0.00";
         else
-            quantityString = quantityString.Substring(0, quantityString.Length - 17);
+            quantityString = quantityString.Substring(0, quantityString.Length - 16);
 
         if (quantityString.Length == 1)
             return $"0.0{quantityString}";
