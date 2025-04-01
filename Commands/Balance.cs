@@ -21,7 +21,7 @@ namespace PlayToEarn.Commands
         public void Execute(IRocketPlayer caller, string[] command)
         {
             string playerBalance = PlayToEarnPlugin.instance.Database.GetBalance(caller.Id);
-            UnturnedChat.Say(caller, PlayToEarnPlugin.instance.Translate("balance_command", playerBalance));
+            UnturnedChat.Say(caller, PlayToEarnPlugin.instance.Translate("balance_command", Utils.FormatCoinToHumanReadable(playerBalance)));
         }
     }
 }
